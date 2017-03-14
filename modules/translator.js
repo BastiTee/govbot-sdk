@@ -80,6 +80,15 @@ function fallbackTranslation(text, from, to) {
     };
     if (translation_disabled || from == to) {
       resolve(text);
+    } else if(params.text instanceof Array) {
+      params.texts = params.text;
+      delete params.text;
+      msTrans.translateArray(params, function(err, data) {
+        data = data.map(function (item) {
+          return item.TranslatedText;
+        });
+        resolve(data);
+      });
     } else {
       msTrans.translate(params, function(err, data) {
         resolve(data);
