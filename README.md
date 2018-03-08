@@ -22,10 +22,12 @@ Der Name des aktiven Bots wird in der ./app.js in Zeile 6 festgelegt und entspri
 ## Entwickler-Tools
 #### BotFramework-Emulator ([Download](https://github.com/Microsoft/BotFramework-Emulator)):
 ##### Konfiguration: 
-Bot endpoint URL: http://localhost:3978/msg
-App ID: -leer lassen-
-App Password: -leer lassen-
-Locale: de
+- Bot Endpoint URL: `http://localhost:3978/msg`
+- App ID: -leer lassen-
+- App Password: -leer lassen-
+- Locale: `de`
+
+Wenn das Betriebssystem zur Entwicklung eine andere Systemsprache außer de_DE nutzt, muss das Locale auf `de` gesetzt werden, da sonst ein Microsoft Translation Key (MICROSOFT_BING_TRANSLATE_KEY_1) notwendig ist, um die Anfragen zu übersetzen.
 
 ## Weitere Informationen
 Weitere nützliche Informationen befinden sich im Ordner "./Doku".
