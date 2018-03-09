@@ -3,3 +3,6 @@ node_modules/
 .idea
 si/
 .env
+# Ignore all additional bots except for demo bot
+additional_bots/
+!additional_bots/botSdkDemo/

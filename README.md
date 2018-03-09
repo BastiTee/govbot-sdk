@@ -1,27 +1,35 @@
-# GovBot-SDK [![node: v6.11.x](https://img.shields.io/badge/node-v6.11.x-blue.svg)](https://nodejs.org/dist/latest-v6.x/) [![License: AGPL v3](https://img.shields.io/badge/License-AGPL%20v3-blue.svg)](http://www.gnu.org/licenses/agpl-3.0) 
+# GovBot-SDK [![node: v6.11.x](https://img.shields.io/badge/node-v6.11.x-blue.svg)](https://nodejs.org/dist/latest-v6.x/) [![License: AGPL v3](https://img.shields.io/badge/License-AGPL%20v3-blue.svg)](http://www.gnu.org/licenses/agpl-3.0)
 Das GovBot-SDK stellt eine Entwicklungsumgebung für den [GovBot](https://www.govbot.io) bereit,  
 in der eigene Bot-Experten getestet und entwickelt werden können. Chatbots die mit diesem SDK entwickelt wurden können hinterher mit in den GovBot integriert werden.
 
 ## Installation und erster Start
-``` 
+```
 $ git clone https://github.com/GovBotIO/govbot-sdk.git
 $ cd govbot-sdk
-$ npm install 
+$ npm install
 $ mv .env.demo .env
-``` 
+```
 Das SDK wird mit folgendem Aufruf gestartet:
 ```
 $ node --debug app.js
 ```
+Mögliche Optionen können mit folgendem Aufruf angezeigt werden:
+```
+$ node --debug app.js -h
+```
 
 ## Entwicklungsbereich
 Der Expertenbot kann in "./additional_bots" analog zum "botSdkDemo" angelegt werden.
-Der Name des aktiven Bots wird in der ./app.js in Zeile 6 festgelegt und entspricht dem Ordnernamen unter "./additional_bots".  
+Der Pfad zum aktiven Bot kann über die Option `-b` konfiguriert werden.
+```
+$ node --debug app.js -b ./additional_bots/meinNeuerBot
+```
 
+Der Name des aktiven Bots entspricht dem Ordnernamen unter "./additional_bots". Wird die `-b` Option nicht verwendet, kommt der Bot "botSdkDemo" zum Einsatz.
 
 ## Entwickler-Tools
 #### BotFramework-Emulator ([Download](https://github.com/Microsoft/BotFramework-Emulator)):
-##### Konfiguration: 
+##### Konfiguration:
 - Bot Endpoint URL: `http://localhost:3978/msg`
 - App ID: -leer lassen-
 - App Password: -leer lassen-
